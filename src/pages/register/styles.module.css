@@ -33,7 +33,7 @@
     color: var(--btns-color-blue);
 }
 
-.page_tittle h1{
+.page_title h1{
     font-family: var(--p-alternative-font);
     color: var(--secondary-color-light-blue)
 }

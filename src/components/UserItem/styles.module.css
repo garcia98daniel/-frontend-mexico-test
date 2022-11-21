@@ -1,0 +1,24 @@
+.UserItem{
+    width: 100%;
+    background: #E8F9FE;
+    display:flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    margin: 5px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.UserItem p{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.UserItem i{
+    cursor:pointer;
+    
+}
+.UserItem i:hover{
+    transform: scale(1.2);
+}

@@ -1,0 +1,31 @@
+.sideMenu{
+    min-width: 354px;
+    height: 100vh;
+    display:flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background-color: #263238;
+    padding-top: 40px;
+}
+
+.hello_text{
+    margin: 40px 0;
+    color:white;
+    width: 100%;
+    padding: 0 65px;
+}
+
+.hello_text p{
+    font-size: 1.5em;
+    color:white;
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+}
+.hello_text h3{
+    font-size: 1.5em;
+    color:white;
+    margin: 0;
+    padding: 0;
+}

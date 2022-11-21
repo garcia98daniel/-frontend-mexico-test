@@ -78,7 +78,7 @@ function index(props) {
           volver
         </div>
       </Link>
-      <Container textAlign="center" className={styles.page_tittle}>
+      <Container textAlign="center" className={styles.page_title}>
         <h1>Registrate en iSoccer</h1>
       </Container>
       <div className={styles.modalHeader}>

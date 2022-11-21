@@ -1,0 +1,41 @@
+.MenuOption{
+    width: 100%;
+    color: rgb(222, 222, 222);
+    margin: 20px 0;
+    display: flex;
+    justify-content: left;
+    padding: 10px 65px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1.3em;
+    border-radius: 8px;
+}
+
+.MenuOption p{
+    margin-left: 20px;
+}
+
+.MenuOption_active{
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: left;
+    padding: 10px 65px;
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 1.3em;
+    border-radius: 8px;
+    background: white;
+    color: #263238;
+    font-weight: 700;
+}
+
+.MenuOption_active p{
+    margin-left: 20px;
+}
+
+.MenuOption:hover{
+    color: rgb(255, 255, 255);
+}

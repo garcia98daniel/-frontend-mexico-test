@@ -32,7 +32,7 @@ function index(props) {
               object-fit= {"contain"}
               />
             </div>
-            <h1 className={styles.form_login_tittle}>Inicia sesión</h1>
+            <h1 className={styles.form_login_title}>Inicia sesión</h1>
             <label>Usuario</label>
             <Input placeholder='Usuario' />
             <label>Contraseña</label>

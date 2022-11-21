@@ -1,0 +1,17 @@
+
+.programa_table_alumno_p_container{
+    display:flex;
+    justify-content: flex-start;
+    padding: 0px 50px;
+}
+
+.programa_table_title_p{
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
+    margin: 0 30px;
+}
+
+.alumno_p{
+    width: 100%;
+    color:gray;
+}
