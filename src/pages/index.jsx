@@ -33,7 +33,6 @@ function index(props) {
   const {
     logged,
   } = useSelector((state) => state.clientReducer);
-  const {user} = useSelector((state) => state.userReducer);
 
   const handleChangeForm = (key, value) => {
     dispatch(loginChangeForm(key, value));

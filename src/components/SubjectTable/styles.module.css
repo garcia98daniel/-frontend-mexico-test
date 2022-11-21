@@ -23,9 +23,18 @@
     font-size: 1.3em;
     color: rgb(0, 0, 0);
     margin: 0 30px;
+    min-width: 130px;
+}
+
+.programa_table_title_p_row{
+    font-size: 1.3em;
+    color: rgb(0, 0, 0);
+    margin: 0 30px;
+    min-width: 10px;
 }
 
 .alumno_p{
     padding: 15px 55px;
     color:gray;
 }
+

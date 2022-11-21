@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from "./styles.module.css";
 
-function StudentSubjectItem({studentName, registrationDate}) {
+function StudentSubjectItem({name, inscription_date}) {
     return (
         <div className={styles.StudentSubjectItem}>
-            <p>studentName</p>
-            <p>registrationDate</p>
+            <p>{name}</p>
+            <p>{inscription_date}</p>
         </div>
     );
 }

@@ -8,12 +8,26 @@ import { useDispatch, useSelector } from "react-redux";
 
 //actions
 import {
-    loginRequesting,
-    loginChangeForm,
+    subjectGetRequesting,
   } from "../../redux/generalsEffects/actions";
+import { useEffect } from 'react';
 
 function Reports(props) {
     const dispatch = useDispatch();
+    const {token} = useSelector((state) => state.clientReducer);
+    const {
+        reportsPage:{
+            requesting,
+            error,
+            success,
+            subjects
+        }
+    } = useSelector(state => state.generalsEffectsReducer); 
+    console.log(subjects)
+
+    useEffect(()=>{
+        dispatch(subjectGetRequesting(token));
+    },[])
     return (
         <div className={styles.reports_page}>
             <SideMenu/>
@@ -26,10 +40,10 @@ function Reports(props) {
                     </div>
                     <p className={styles.table_title_p}>Detalle</p>
                 </div>
-                
-                {
-                    [1,2,3].map((student, index) => (
-                        <SubjectTable/>
+
+                {subjects.length > 0 &&
+                    subjects?.map((subject, index) => (
+                        <SubjectTable key={index} {...subject} />
                     ))
                 }
             </div>

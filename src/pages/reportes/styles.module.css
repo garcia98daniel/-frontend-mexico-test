@@ -7,10 +7,9 @@
     height: 100vh;
     display:flex;
     flex-direction: column;
-    padding: 0 50px;
+    padding: 10px 50px;
     background: #F9FEFF;
-
-
+    overflow: auto;
 }
 
 .page_title{
@@ -39,3 +38,4 @@
     color: gray;
     margin: 0 30px;
 }
+
