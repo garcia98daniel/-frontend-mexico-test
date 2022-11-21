@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'semantic-ui-react';
 import SideMenu from "../../components/SideMenu/index";
 import UsersTable from "../../components/UsersTable/index";
+import ModalCreateUser from "../../components/ModalCreateUser/index";
 import styles from "./styles.module.css";
 
 function Users(props) {
@@ -16,7 +17,9 @@ function Users(props) {
                         <p className={styles.table_title_p}>PROFESORES</p>
                         <p className={styles.table_title_p}>ADMINISTRADORES</p>
                     </div>
-                    <p className={styles.table_title_p}> <Button size='large' color='blue'>Nuevo Usuario</Button></p>
+                    <p className={styles.table_title_p}>
+                        <ModalCreateUser/>
+                    </p>
                 </div>
                 
                 <UsersTable/>

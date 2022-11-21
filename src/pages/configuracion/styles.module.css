@@ -1,4 +1,4 @@
-.reports_page{
+.users_page{
     display:flex;
 }
 
@@ -9,8 +9,6 @@
     flex-direction: column;
     padding: 0 50px;
     background: #F9FEFF;
-
-
 }
 
 .page_title{
@@ -19,23 +17,24 @@
     justify-content: center;
     text-align: center;
     padding-top: 72px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
+    font-size: 2.5em;
 }
 
-.table_title{
+.config_form_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    align-self: center;
+}
+
+.config_form_container label{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    padding-left: 20px;
-
+    text-align: left;
+    margin-top: 25px;
 }
 
-.table_title_first_container{
-    display: flex;
-}
-
-.table_title_p{
-    color: gray;
-    margin: 0 30px;
+.btn_section{
+    margin-top: 25px;
 }
