@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Roboto|Rubik&display=swap');
+:root {
+  --main-color-blue: #012046;
+  /* --main-color-blue: rgb(1, 32, 70); */
+  --secondary-color-light-blue: #196198;
+  --btns-color-blue: #183161;
+  --color-very-light-blue: #056fff;
+  --yellow-color: #ffe109;
+  --pane-padding: 5px 42px;
+  --main-font: 'Rubik', sans-serif;
+  --brand-font: 'Fjalla One', sans-serif;
+  --p-alternative-font: 'Roboto', sans-serif;
+}
+.infinite-scroll-component__outerdiv{
+  height: 100% !important;
+  width: 100% !important;
+  display: inherit !important;
+  flex-direction: inherit !important;
+  flex-wrap: inherit !important;
+  align-content: inherit !important;
+  justify-content: inherit !important;
+}
+.infinite-scroll-component {
+  height: inherit !important;
+  width: inherit !important;
+  display: inherit !important;
+  flex-direction: inherit !important;
+  flex-wrap: inherit !important;
+  align-content: inherit !important;
+  justify-content: inherit !important;
+
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover{
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5{
+  font-family: var(--p-alternative-font);
+  margin: 0;
+  padding: 0;
+}
+
+p, a, small, strong{
+  font-family: var(--p-alternative-font);
+  margin: 0;
+  padding: 0;
+}
+
+
+.ui.fullscreen.modal {
+  right: 0 !important;
+}
+
+.ui.form .fields{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ui.form .fields>.field{
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 10px !important;
+}
+
+.ui.secondary.vertical.pointing.menu{
+  font-family: 'Rubik', sans-serif !important;
+  font-style: initial !important;
+  width: initial;
+  border-right-color: transparent;
+}
+
+.ui.secondary.vertical.pointing.menu .item{
+  font-size: 1.2em !important;
+  background: var(--main-color-blue) !important;
+  color: white !important;
+  border-radius: 13px !important;
+}
+
+.ui.secondary.vertical.pointing.menu .active.item {
+  color: var(--main-color-blue) !important;
+  background: white !important;
+  border: none !important;
+
+}
+
+.ui.input{
+  width: 100%;
+}
+
+/* buscar partido */
+/* .ui.toggle.checkbox input:checked~.box:after, .ui.toggle.checkbox input:checked~label:after{
+	background: var(--yellow-color) !important;
+}
+
+.activador_fecha.ui.toggle.checkbox input:checked~.box:before, .ui.toggle.checkbox input:checked~label:before {
+  background: #040506!important;
+} */
+
+.ui.slider.checkbox .box:after, .ui.slider.checkbox label:after{
+	background: #fff7bb !important;
+}
+.ui.slider.checkbox input:checked~.box:after, .ui.slider.checkbox input:checked~label:after{
+  background: var(--yellow-color) !important;
+}
+
+.ui.selection.dropdown , .field{
+	margin: 5px 0 ;
+}
+
+.ui.selection.dropdown{
+  width: 100%;
+}
+
+.ui[class*="top attached"].menu{
+  margin-top: 0 !important;
+}
+
+.ui.segment{
+  padding: 0 !important;
+  border-color: var(--main-color-blue) !important; 
+
+}
+
+.ui.tabular.menu{
+  border-color: var(--main-color-blue) !important; 
+}
+
+.ui.tabular.menu .active.item{
+  /* background: rgb(230, 230, 230) !important; */
+  background:  var(--main-color-blue) !important; 
+  color: var(--yellow-color) !important;
+  border-color: var(--main-color-blue) !important; 
+}
+.ui.tabular.menu .active.item:hover{
+  /* background: rgb(230, 230, 230) !important; */
+  background:  var(--main-color-blue) !important; 
+  color: var(--yellow-color) !important;
+  border-color: var(--main-color-blue) !important; 
+}
+
+.ui.tabular.menu .item {
+  border-left: 1px solid lightgray !important;
+  border-right: 1px solid lightgray !important;
+  border-top: 2px solid lightgray !important;
+  border-radius: 3px !important;
+}
+.ui.tabular.menu .item:hover {
+  background:lightgray !important; 
+
+}
+@media screen and (max-width: 767px) {
+  
+  .ui.secondary.vertical.pointing.menu{
+     display: flex !important;
+     justify-content: space-between !important;
+     flex-direction: row !important;
+     margin-bottom: 5px;
+  }
+}
+/* #modal-root{
+  position: relative;
+  z-index: 1000;
+  position: absolute;
+  left: 0;
+  right:0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+} */

@@ -1,0 +1,54 @@
+.login_page{
+	height: 100vh;
+	width: 100%;
+	display: flex;
+}
+
+.left_login{
+	height: 100%;
+	background:white;
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.right_login{
+	height: 100%;
+	width: 50%;
+	background: #23B8E3;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form_login{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 380px;
+	/* background-color: rgb(143, 143, 255); */
+	text-align: left;
+}
+
+.form_login_img{
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+
+.form_login_tittle{
+	width: 100%;
+	text-align:left;
+}
+.form_login label{
+	width: 100%;
+	text-align: left;
+	margin-top: 20px;
+}
+
+.form_btn_container{
+	width: 100%;
+	margin-top: 100px;
+}
