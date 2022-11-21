@@ -6,10 +6,19 @@ import { Icon } from 'semantic-ui-react';
 //styles
 import styles from "./styles.module.css";
 
-function MenuOption({setOptionSelected, optionSelected, urlRoute, text, iconName}) {
+import { useDispatch, useSelector } from "react-redux";
+//actions
+import {
+    menuSideOption
+  } from "../../redux/generalsEffects/actions";
+
+function MenuOption({ urlRoute, text, iconName}) {
+    const dispatch = useDispatch();
+    const {menuSideOptionValue} = useSelector(state => state.generalsEffectsReducer)
+
     return (
         <Link href={urlRoute}>
-            <div className={optionSelected === urlRoute ? styles.MenuOption_active : styles.MenuOption} onClick={() => setOptionSelected(urlRoute)}>
+            <div className={menuSideOptionValue === urlRoute ? styles.MenuOption_active : styles.MenuOption} onClick={() => dispatch(menuSideOption(urlRoute))}>
                 <Icon name={iconName}/>
                 <p>{text}</p>
             </div>

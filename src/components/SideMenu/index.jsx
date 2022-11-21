@@ -8,7 +8,7 @@ import MenuOption from "../MenuOption/index";
 import styles from "./styles.module.css";
 
 function SideMenu(props) {
-  const [optionSelected, setOptionSelected] = useState("/reportes");
+
   return (
     <div className={styles.sideMenu}>
       <div className={styles.form_login_img}>
@@ -25,22 +25,16 @@ function SideMenu(props) {
         <h3>{"user name"}</h3>
       </div>
       <MenuOption
-        setOptionSelected={setOptionSelected}
-        optionSelected={optionSelected}
         iconName="shopping bag"
         text={"Reportes"}
         urlRoute="/reportes"
       />
       <MenuOption
-        setOptionSelected={setOptionSelected}
-        optionSelected={optionSelected}
         iconName="users"
         text={"Usuarios"}
         urlRoute="/usuarios"
       />
       <MenuOption
-        setOptionSelected={setOptionSelected}
-        optionSelected={optionSelected}
         iconName="cog"
         text={"Configuracion"}
         urlRoute="/configuracion"

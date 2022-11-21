@@ -4,9 +4,16 @@ import SubjectTable from "../../components/SubjectTable/index";
 
 //styles
 import styles from "./styles.module.css";
+import { useDispatch, useSelector } from "react-redux";
+
+//actions
+import {
+    loginRequesting,
+    loginChangeForm,
+  } from "../../redux/generalsEffects/actions";
 
 function Reports(props) {
-
+    const dispatch = useDispatch();
     return (
         <div className={styles.reports_page}>
             <SideMenu/>
