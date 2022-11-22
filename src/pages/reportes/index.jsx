@@ -23,7 +23,6 @@ function Reports(props) {
             subjects
         }
     } = useSelector(state => state.generalsEffectsReducer); 
-    console.log(subjects)
 
     useEffect(()=>{
         dispatch(subjectGetRequesting(token));

@@ -3,8 +3,19 @@ import { Icon } from 'semantic-ui-react';
 import styles from "./styles.module.css";
 
 import UserItem from "../UserItem/index";
+import { useSelector } from 'react-redux';
 
 function UsersTable(props) {
+    
+    const {
+        usersPage:{
+            requesting,
+            error,
+            success,
+            users
+        }
+    } = useSelector(state => state.generalsEffectsReducer); 
+
     return (
         <div className={styles.table_container}>
             
@@ -14,9 +25,9 @@ function UsersTable(props) {
                 <p className={styles.alumno_p}>CORREO</p>
                 <p className={styles.alumno_p}>ROL</p>
             </div>
-            {
-                [1,2,3].map((student, index) => (
-                    <UserItem key={index} user={"daniel"} name={"daniel"} email={"daniel"} role={"daniel"}/>
+            {users.length > 0 &&
+                users.map((user, index) => (
+                    <UserItem key={index} {...user}/>
                 ))
             }
         </div>

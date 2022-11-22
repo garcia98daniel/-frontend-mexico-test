@@ -5,7 +5,20 @@ import UsersTable from "../../components/UsersTable/index";
 import ModalCreateUser from "../../components/ModalCreateUser/index";
 import styles from "./styles.module.css";
 
+import { useDispatch, useSelector } from "react-redux";
+
+//actions
+import {
+    usersGetRequesting,
+  } from "../../redux/generalsEffects/actions";
+import { useEffect } from 'react';
+
 function Users(props) {
+    const dispatch = useDispatch();
+    const {token} = useSelector((state) => state.clientReducer);
+    useEffect(() => {
+        dispatch(usersGetRequesting(token));
+    },[])
     return (
         <div className={styles.users_page}>
             <SideMenu/>
