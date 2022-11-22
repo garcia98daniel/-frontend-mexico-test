@@ -12,9 +12,10 @@ import styles from "./styles.module.css";
 //actions
 import { userUpdateRequesting, userChangeForm } from "../../redux/auth/user/actions";
 
-function Config(props) {
+function Config() {
     const router = useRouter();
     const dispatch = useDispatch();
+
     const { 
         user,
         values,
@@ -29,9 +30,12 @@ function Config(props) {
         } 
     } = useSelector((state) => state.userReducer);
 
+  //------------------- this handle the inputs values--------------------//
     const handleChangeForm = (key, value) => {
         dispatch(userChangeForm(key, value));
       };
+
+  //------------------- this submit the values to update the user  logged info --------------------//
     const handleCreateUser = (e) => {
         e.preventDefault();
         dispatch(userUpdateRequesting(token, values));
@@ -39,6 +43,7 @@ function Config(props) {
 
     const {token, logged} = useSelector((state) => state.clientReducer);
 
+  //------------------- protect route when user is not logged --------------------//
     useEffect(() => {
         if(!logged)
         router.push("/")

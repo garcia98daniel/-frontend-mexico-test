@@ -15,9 +15,10 @@ import { subjectGetRequesting } from "../../redux/generalsEffects/actions";
 
 function Reports() {
     const router = useRouter();
-
     const dispatch = useDispatch();
+
     const {token, logged} = useSelector((state) => state.clientReducer);
+
     const {
         reportsPage:{
             requesting,
@@ -25,16 +26,20 @@ function Reports() {
             success,
             subjects
         }
-    } = useSelector(state => state.generalsEffectsReducer); 
+    } = useSelector(state => state.generalsEffectsReducer);
 
+  //------------------- call once subjects list --------------------//
     useEffect(()=>{
         dispatch(subjectGetRequesting(token));
     },[])
 
+  //------------------- protect route when user is not logged --------------------//
     useEffect(() => {
         if(!logged)
         router.push("/")
     },[logged])
+
+    
     return (
         <div className={styles.reports_page}>
             <SideMenu/>

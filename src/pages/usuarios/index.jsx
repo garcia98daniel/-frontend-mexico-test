@@ -17,11 +17,13 @@ import {
 import {useVerifyUserRole} from "../../hooks/useVerifyUserRole";
 import { Button, Dimmer, Loader } from 'semantic-ui-react';
 
-function Users(props) {
+function Users() {
     const router = useRouter();
     const dispatch = useDispatch();
-    const {token} = useSelector((state) => state.clientReducer);
+
+    const {token, logged} = useSelector((state) => state.clientReducer);
     const { user } = useSelector((state) => state.userReducer);
+
     const {
         usersPage:{
             requesting,
@@ -31,16 +33,19 @@ function Users(props) {
         }
     } = useSelector(state => state.generalsEffectsReducer); 
 
+  //------------------- call once the users list --------------------//
     useEffect(() => {
         dispatch(usersGetRequesting(token));
     },[])
 
-    const {logged} = useSelector((state) => state.clientReducer);
+  //------------------- protect route when user is not logged --------------------//
     useEffect(() => {
         if(!logged)
         router.push("/")
     },[logged])
     
+
+  //------------------- protect the content of the page when user has not the role --------------------//
     const [hasRole, setHasRole] = useState(useVerifyUserRole(user, "admin"));
     if(!hasRole){
         console.log(hasRole)

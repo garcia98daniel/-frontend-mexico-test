@@ -37,9 +37,12 @@ function ModalCreateUser(props) {
     createUserValues: { role, subject_id, user, name, email, password },
   } = useSelector((state) => state.generalsEffectsReducer);
 
+  //------------------- this handle the inputs values--------------------//
   const handleChangeForm = (key, value) => {
     dispatch(changeCreateUserForm(key, value));
   };
+
+  //------------------- this handle the inputs SELECTS values--------------------//
   const handleChangeForm_select = (event, data) => {
     const { name, value } = data;
     if(name === "admin" ){
@@ -50,17 +53,20 @@ function ModalCreateUser(props) {
     }
   };
 
+  //------------------- this submit the values to create a user --------------------//
   const handleCreateUser = (e) => {
     e.preventDefault();
     dispatch(createUserRequesting(createUserValues, token));
   };
 
-
+  //------------------- close modal when user is created --------------------//
   useEffect(()=>{
     if(success){
       setOpen(false);
     }
   },[success])
+
+  
   return (
     <Modal
       size={"tiny"}

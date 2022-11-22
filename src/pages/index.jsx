@@ -19,7 +19,7 @@ import {
   loginChangeForm,
 } from "../redux/auth/login/actions";
 
-function index(props) {
+function index() {
   const router = useRouter();
   const dispatch = useDispatch();
   const {
@@ -34,15 +34,18 @@ function index(props) {
     logged,
   } = useSelector((state) => state.clientReducer);
 
+  //------------------- this handle the inputs values--------------------//
   const handleChangeForm = (key, value) => {
     dispatch(loginChangeForm(key, value));
   };
 
+  //------------------- this submit values--------------------//
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(loginRequesting(values));
   };
 
+  //------------------- move to reportes page when user is logged --------------------//
   useEffect(() => {
     if(logged){
         router.push("/reportes")
