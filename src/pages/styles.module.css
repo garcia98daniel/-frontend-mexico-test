@@ -42,11 +42,17 @@
 	text-align: left;
 }
 
+
 .form_login_img{
 	width: 100%;
 	display: flex;
 	justify-content: flex-start;
 	margin-bottom: 20px;
+}
+
+.login_inputs{
+	width: 100% !important;
+	margin-top: 20px;
 }
 
 .form_login_title{
@@ -56,10 +62,10 @@
 .form_login label{
 	width: 100%;
 	text-align: left;
-	margin-top: 20px;
 }
 
 .form_btn_container{
 	width: 100%;
 	margin-top: 100px;
 }
+

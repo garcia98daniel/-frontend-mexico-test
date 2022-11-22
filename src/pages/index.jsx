@@ -6,7 +6,10 @@ import { useRouter } from 'next/router';
 
 //components
 import { Button } from 'semantic-ui-react';
-import { Input } from 'semantic-ui-react'
+import { 
+  Input, 
+  Form,
+ } from 'semantic-ui-react'
 
 //styles
 import styles from "./styles.module.css";
@@ -55,7 +58,7 @@ function index() {
   return (
     <div className={styles.login_page}>
       <div className={styles.left_login}>
-          <form onSubmit={(e) => handleLogin(e)} className={styles.form_login}>
+          <Form onSubmit={(e) => handleLogin(e)} className={styles.form_login}>
             <div className={styles.form_login_img}>
               <Image 
               className={styles.form_login_img} 
@@ -66,31 +69,40 @@ function index() {
               />
             </div>
             <h1 className={styles.form_login_title}>Inicia sesión</h1>
-            <label>Usuario</label>
-            <Input placeholder='Usuario' 
-            value={values.user}
+            <Form.Field
+            className={styles.login_inputs}
+            label="Usuario"
+            autocomplete="on"
+            control={Input}
+            placeholder="Usuario"
+            iconPosition="left"
+            value={values.email}
             onChange={(e) => handleChangeForm("user", e.target.value)}
             error={
               errors !== "" &&
               errors?.hasOwnProperty("user") && {
-                content: errors.email,
+                content: errors.user,
               }
-
             }
-            />
-            <label>Contraseña</label>
-            <Input
-              type="password"
-              placeholder='Contraseña'
-              password={values.password}
-              onChange={(e) => handleChangeForm("password", e.target.value)}
-              error={
-                errors !== "" &&
-                errors?.hasOwnProperty("password") && {
-                  content: errors.password,
-                }
+          ></Form.Field>
+
+            <Form.Field
+            className={styles.login_inputs}
+            label="Contraseña"
+            labelPosition="left corner"
+            type="password"
+            placeholder="Contraseña"
+            value={values.password}
+            onChange={(e) => handleChangeForm("password", e.target.value)}
+            control={Input}
+            error={
+              errors !== "" &&
+              errors?.hasOwnProperty("password") && {
+                content: errors.password,
               }
-            />
+            }
+
+            ></Form.Field>
             {error?.message === "The given data was invalid." && (
               <p className={styles.errors}>
                 Correo o contraseña inválida.
@@ -111,7 +123,7 @@ function index() {
             <div className={styles.form_btn_container}>
               <Button loading={requesting} type="submit" size='large' color='yellow' fluid>Iniciar sesión</Button>
             </div>
-          </form>
+          </Form>
       </div>
       <div className={styles.right_login}>
       <Image 
