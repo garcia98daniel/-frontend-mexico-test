@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Button, Header, Image, Input, Modal, Select } from "semantic-ui-react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Input, Modal, Select } from "semantic-ui-react";
 import styles from "./styles.module.css";
 
 //actions
@@ -7,18 +8,20 @@ import {
   changeCreateUserForm,
   createUserRequesting,
  } from "../../redux/generalsEffects/actions";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+ 
 const roleOptions = [
   { key: "1", value: "admin", text: "Admin" },
   { key: "2", value: "teacher", text: "Teacher" },
 ];
+
 const subjectOptions = [
   { key: "1", value: "1", text: "Primavera" },
   { key: "2", value: "2", text: "Canto" },
   { key: "3", value: "3", text: "Baile" },
 ];
+
 function ModalCreateUser(props) {
+
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
   const {token} = useSelector((state) => state.clientReducer);

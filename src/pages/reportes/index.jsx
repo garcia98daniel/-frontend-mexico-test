@@ -1,20 +1,23 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from 'next/router';
+
+//componets
 import SideMenu from "../../components/SideMenu/index";
 import SubjectTable from "../../components/SubjectTable/index";
+import { Dimmer, Loader, Segment } from 'semantic-ui-react';
 
 //styles
 import styles from "./styles.module.css";
-import { useDispatch, useSelector } from "react-redux";
 
 //actions
-import {
-    subjectGetRequesting,
-  } from "../../redux/generalsEffects/actions";
-import { useEffect } from 'react';
+import { subjectGetRequesting } from "../../redux/generalsEffects/actions";
 
-function Reports(props) {
+function Reports() {
+    const router = useRouter();
+
     const dispatch = useDispatch();
-    const {token} = useSelector((state) => state.clientReducer);
+    const {token, logged} = useSelector((state) => state.clientReducer);
     const {
         reportsPage:{
             requesting,
@@ -27,10 +30,20 @@ function Reports(props) {
     useEffect(()=>{
         dispatch(subjectGetRequesting(token));
     },[])
+
+    useEffect(() => {
+        if(!logged)
+        router.push("/")
+    },[logged])
     return (
         <div className={styles.reports_page}>
             <SideMenu/>
             <div className={styles.page_container}>
+            {requesting &&
+                <Dimmer active inverted>
+                    <Loader inverted content='Loading' />
+                </Dimmer>
+            }
                 <h1 className={styles.page_title}>Reportes</h1>
                 <div className={styles.table_title}>
                     <div className={styles.table_title_first_container}>
@@ -45,8 +58,8 @@ function Reports(props) {
                         <SubjectTable key={index} {...subject} />
                     ))
                 }
+            
             </div>
-
         </div>
     );
 }
