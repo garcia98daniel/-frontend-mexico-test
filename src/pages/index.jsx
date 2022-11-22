@@ -22,7 +22,7 @@ import {
   loginChangeForm,
 } from "../redux/auth/login/actions";
 
-function index() {
+function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
   const {
@@ -138,4 +138,4 @@ function index() {
   );
 }
 
-export default index;
+export default Home;
