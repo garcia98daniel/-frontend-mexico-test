@@ -11,7 +11,9 @@ import styles from "./styles.module.css";
 //actions
 import {
     usersGetRequesting,
+    changeFilterUsers
 } from "../../redux/generalsEffects/actions";
+
 import {useVerifyUserRole} from "../../hooks/useVerifyUserRole";
 import { Button, Dimmer, Loader } from 'semantic-ui-react';
 
@@ -25,6 +27,7 @@ function Users(props) {
             requesting,
             error,
             success,
+            filter
         }
     } = useSelector(state => state.generalsEffectsReducer); 
 
@@ -66,9 +69,15 @@ function Users(props) {
                 <h1 className={styles.page_title}>Usuarios</h1>
                 <div className={styles.table_title}>
                     <div className={styles.table_title_first_container}>
-                        <p className={styles.table_title_p}>TODOS</p>
-                        <p className={styles.table_title_p}>PROFESORES</p>
-                        <p className={styles.table_title_p}>ADMINISTRADORES</p>
+                        <p 
+                        onClick={() => dispatch(changeFilterUsers(""))} 
+                        className={filter === "" ? styles.table_title_p_active : styles.table_title_p}>TODOS</p>
+                        <p 
+                        onClick={() => dispatch(changeFilterUsers("teacher"))} 
+                        className={filter === "teacher" ? styles.table_title_p_active : styles.table_title_p}>PROFESORES</p>
+                        <p 
+                        onClick={() => dispatch(changeFilterUsers("admin"))} 
+                        className={filter === "admin" ? styles.table_title_p_active : styles.table_title_p}>ADMINISTRADORES</p>
                     </div>
                     <p className={styles.table_title_p}>
                         <ModalCreateUser/>

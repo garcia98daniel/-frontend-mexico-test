@@ -1,20 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Icon } from 'semantic-ui-react';
 import styles from "./styles.module.css";
 
 import UserItem from "../UserItem/index";
 import { useSelector } from 'react-redux';
 
+
 function UsersTable(props) {
+  const [filterArrayUsers, setFilterArrayUsers] =  useState(users);
     
     const {
         usersPage:{
             requesting,
             error,
             success,
-            users
+            users,
+            filter
         }
     } = useSelector(state => state.generalsEffectsReducer); 
+
+    //---------------- filter users by role -----------------//
+    useEffect(() => {
+        setFilterArrayUsers(
+            users.filter((user) => {
+              return (
+                  user.roles[0].name
+                    .toLowerCase()
+                    .indexOf(filter.toString().toLowerCase()) !== -1
+                );
+              })
+        )
+    },[filter, users])
 
     return (
         <div className={styles.table_container}>
@@ -26,7 +42,7 @@ function UsersTable(props) {
                 <p className={styles.alumno_p}>ROL</p>
             </div>
             {users.length > 0 &&
-                users.map((user, index) => (
+                filterArrayUsers?.map((user, index) => (
                     <UserItem key={index} {...user}/>
                 ))
             }

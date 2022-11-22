@@ -17,7 +17,7 @@ function UserItem({id, user, name, email, roles}) {
             <p>{user}</p>
             <p>{name}</p>
             <p>{email}</p>
-            <p>{roles && roles[0]?.name}</p>
+            <p>{roles && roles[0]?.name==="teacher" ? 'Profesor' : roles[0]?.name==="admin" &&  "Admin" }</p>
             <div onClick={() => dispatch(userDeleteRequesting(id, token))}>
                 <Icon size="large" name="trash"/>
             </div>

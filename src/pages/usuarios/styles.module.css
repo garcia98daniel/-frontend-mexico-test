@@ -40,9 +40,11 @@
     color: black;
     margin: 0 30px;
     font-weight: bold;
+    cursor: pointer;
 }
 .table_title_p_active{
     color: #28ABE7;
     margin: 0 30px;
     font-weight: bold;
+    cursor: pointer;
 }

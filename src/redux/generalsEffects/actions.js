@@ -26,6 +26,8 @@ import {
     CREATE_USER_SUCCESS,
     CREATE_USER_ERROR,
 
+    //constantes para cambiar filtro de usuarios
+    CHANGE_FILTER_USERS
 } from "./constants";
 
 
@@ -108,4 +110,10 @@ export const createUserSuccess = (user) => ({
 export const createUserError = (error) => ({
         type : CREATE_USER_ERROR,
         error
+});
+
+//constantes para cambiar filtro de usuarios
+export const changeFilterUsers = (value) => ({
+        type : CHANGE_FILTER_USERS,
+        value
 });

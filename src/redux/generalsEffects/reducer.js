@@ -24,6 +24,8 @@ import {
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
 
+  //constantes para cambiar filtro de usuarios
+  CHANGE_FILTER_USERS,
 } from "./constants";
 
 const initialState = {
@@ -46,6 +48,7 @@ const initialState = {
     success: false,
     error: "",
     users: [],
+    filter: '',
   },
 
   createUserValues: {
@@ -60,6 +63,15 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_FILTER_USERS:
+      return {
+        ...state,
+        usersPage: {
+          ...state.usersPage,
+          filter: action.value
+        },
+      };
+
     case SUBJECT_GET_REQUESTING:
       return {
         ...state,
