@@ -23,6 +23,7 @@ import {
   CREATE_USER_REQUESTING,
   CREATE_USER_SUCCESS,
   CREATE_USER_ERROR,
+
 } from "./constants";
 
 const initialState = {
@@ -190,7 +191,7 @@ const reducer = (state = initialState, action) => {
         },
       };
 
-    //delete users
+    //eliminar usuario
     case CREATE_USER_REQUESTING:
       return {
         ...state,
@@ -224,7 +225,6 @@ const reducer = (state = initialState, action) => {
           error: action.error,
         },
       };
-
     case RESETSTATE:
       return {
         reportsPage: {

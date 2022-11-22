@@ -1,14 +1,23 @@
 import { useRouter } from 'next/router';
 import React, {useEffect} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+//components
 import { Button, Input } from 'semantic-ui-react';
 import SideMenu from "../../components/SideMenu/index";
+
+//styles
 import styles from "./styles.module.css";
+
+//actions
+import { userUpdateRequesting, userChangeForm } from "../../redux/auth/user/actions";
+
 function Config(props) {
     const router = useRouter();
-
+    const dispatch = useDispatch();
     const { 
         user,
+        values,
         values:{
             id,
             userNickName,
@@ -20,17 +29,27 @@ function Config(props) {
         } 
     } = useSelector((state) => state.userReducer);
 
-    const {logged} = useSelector((state) => state.clientReducer);
+    const handleChangeForm = (key, value) => {
+        dispatch(userChangeForm(key, value));
+      };
+    const handleCreateUser = (e) => {
+        e.preventDefault();
+        dispatch(userUpdateRequesting(token, values));
+    };
+
+    const {token, logged} = useSelector((state) => state.clientReducer);
+
     useEffect(() => {
         if(!logged)
         router.push("/")
     },[logged])
+
     return (
         <div className={styles.users_page}>
         <SideMenu/>
         <div className={styles.page_container}>
             <h1 className={styles.page_title}>Configuración</h1>
-            <form className={styles.config_form_container}>
+            <form onSubmit={(e) => handleCreateUser(e)} className={styles.config_form_container}>
                 {user?.roles?.length>0 && 
                 user?.roles[0]?.name === "teacher" && 
                 subject_pivot && 
@@ -42,22 +61,33 @@ function Config(props) {
                 }
 
                 <label>Usuario</label>
-                <Input value={userNickName} focus placeholder='Usuario' />
+                <Input 
+                 onChange={(e) => handleChangeForm("userNickName", e.target.value)}
+                 value={userNickName} focus placeholder='Usuario' 
+                 />
 
                 <label>Nombre</label>
-                <Input value={name} focus placeholder='Nombre' />
+                <Input 
+                 onChange={(e) => handleChangeForm("name", e.target.value)}
+                 value={name} focus placeholder='Nombre' 
+                 />
 
                 <label>Correo</label>
-                <Input value={email} focus placeholder='Correo' />
+                <Input 
+                 onChange={(e) => handleChangeForm("email", e.target.value)}
+                 value={email} focus placeholder='Correo' 
+                 />
 
                 <label>Contraseña</label>
-                <Input value={password} focus
-                type="password"
-                placeholder='Contraseña'
-                password
+                <Input 
+                 onChange={(e) => handleChangeForm("password", e.target.value)}
+                 value={password} focus
+                 type="password"
+                 placeholder='Contraseña'
+                 password
                 />
                 <div className={styles.btn_section}>
-                    <Button color='blue'>Guardar</Button>
+                    <Button type="submit" color='blue'>Guardar</Button>
                 </div>
             </form>
         </div>
