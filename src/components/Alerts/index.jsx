@@ -11,7 +11,7 @@ import styles from "./styles.module.css";
 
 const easing = [0.6, -0.05, 0.01, 0.99];
 
-function index(props) {
+function Alerts(props) {
     const dispatch = useDispatch();
     const router = useRouter();
     const {alertModal} = useSelector(state => state.generalsEffectsReducer); 
@@ -61,4 +61,4 @@ function index(props) {
     );
 }
 
-export default index;
+export default Alerts;
