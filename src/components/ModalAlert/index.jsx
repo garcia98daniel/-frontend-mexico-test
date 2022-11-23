@@ -3,7 +3,7 @@ import ReactDOM, {createPortal} from 'react-dom';
 import styles from "./styles.module.css";
 
 
-function index({ show, onClose, children}) {
+function ModalAlert({ show, onClose, children}) {
     const [isBrowser, setIsBrowser] = useState(false);
   
     useEffect(() => {
@@ -26,4 +26,4 @@ function index({ show, onClose, children}) {
     }
   };
 
-export default index;
+export default ModalAlert;
