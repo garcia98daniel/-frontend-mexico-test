@@ -38,3 +38,20 @@
 .btn_section{
     margin-top: 25px;
 }
+
+@media screen and (max-width: 768px) {
+    .page_title{
+        padding-top: 42px;
+    }
+
+    .config_form_container label{
+        width: 100%;
+        text-align: left;
+        margin-top: 15px;
+    }
+}
+@media screen and (max-width: 698px) {
+    .config_form_container{
+        width: 100%;
+    }
+}

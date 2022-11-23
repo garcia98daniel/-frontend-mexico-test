@@ -76,3 +76,14 @@
    
   
 }
+
+@media screen and (max-width: 602px){
+    
+    .table_title_p{
+        margin: 0 5px;
+    }
+
+    .table_title_p_active{
+        margin: 0 5px;
+    }
+}

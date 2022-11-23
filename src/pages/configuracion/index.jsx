@@ -61,30 +61,35 @@ function Config() {
                 subject_pivot.length > 0 && 
                 <>
                     <label>Programa</label>
-                    <Input value={subject_pivot[0]?.subjects[0]?.name} focus disabled placeholder='Programa' />
+                    <Input
+                     fluid value={subject_pivot[0]?.subjects[0]?.name} focus disabled placeholder='Programa' />
                 </>
                 }
 
                 <label>Usuario</label>
-                <Input 
+                <Input
+                 fluid 
                  onChange={(e) => handleChangeForm("userNickName", e.target.value)}
                  value={userNickName} focus placeholder='Usuario' 
                  />
 
                 <label>Nombre</label>
-                <Input 
+                <Input
+                 fluid 
                  onChange={(e) => handleChangeForm("name", e.target.value)}
                  value={name} focus placeholder='Nombre' 
                  />
 
                 <label>Correo</label>
-                <Input 
+                <Input
+                 fluid 
                  onChange={(e) => handleChangeForm("email", e.target.value)}
                  value={email} focus placeholder='Correo' 
                  />
 
                 <label>Contraseña</label>
-                <Input 
+                <Input
+                 fluid 
                  onChange={(e) => handleChangeForm("password", e.target.value)}
                  value={password} focus
                  type="password"
