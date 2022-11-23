@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import SideMenu from "../../components/SideMenu/index";
 import UsersTable from "../../components/UsersTable/index";
 import ModalCreateUser from "../../components/ModalCreateUser/index";
+import ModalAlert from "../../components/ModalAlert/index";
+import Alerts from "../../components/Alerts/index";
 
 import styles from "./styles.module.css";
 
@@ -20,6 +22,7 @@ import { Button, Dimmer, Loader } from 'semantic-ui-react';
 function Users() {
     const router = useRouter();
     const dispatch = useDispatch();
+    const { alertModal } = useSelector((state) => state.generalsEffectsReducer);
 
     const {token, logged} = useSelector((state) => state.clientReducer);
     const { user } = useSelector((state) => state.userReducer);
@@ -91,7 +94,11 @@ function Users() {
                 
                 <UsersTable/>
             </div>
-
+            <ModalAlert
+                show={alertModal.isOpen}
+            >
+                <Alerts/>
+            </ModalAlert>
         </div>
     );
 }

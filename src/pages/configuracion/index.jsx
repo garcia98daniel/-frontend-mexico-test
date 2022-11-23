@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 //components
 import { Button, Input } from 'semantic-ui-react';
 import SideMenu from "../../components/SideMenu/index";
+import ModalAlert from "../../components/ModalAlert/index";
+import Alerts from "../../components/Alerts/index";
 
 //styles
 import styles from "./styles.module.css";
@@ -15,6 +17,7 @@ import { userUpdateRequesting, userChangeForm } from "../../redux/auth/user/acti
 function Config() {
     const router = useRouter();
     const dispatch = useDispatch();
+    const { alertModal } = useSelector((state) => state.generalsEffectsReducer);
 
     const { 
         user,
@@ -101,7 +104,11 @@ function Config() {
                 </div>
             </form>
         </div>
-
+        <ModalAlert
+            show={alertModal.isOpen}
+        >
+            <Alerts/>
+        </ModalAlert>
     </div>
     );
 }

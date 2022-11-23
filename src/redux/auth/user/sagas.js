@@ -9,6 +9,9 @@ import {
 } from "./actions";
 import {USER_GET_REQUESTING, USER_UPDATE_REQUESTING} from "./constants";
 import {clientSet} from "../../client/actions";
+
+import {handlerAlertModal} from "../../generalsEffects/actions";
+
 const meUrl = `${ROUTE_ENDPOINT}/me`;
 
 const userGetApi = (token) => {
@@ -81,6 +84,7 @@ function* userUpdateFlow(action) {
         // console.log(values);
         const user = yield call(userUpdateApi, token, values);
         yield put(userUpdateSuccess(user));
+        yield put(handlerAlertModal("success", "=D Has actualizado tus datos con éxito"));
         yield put(userResetStates());
     } catch (error) {
         yield put(userUpdateError(error));

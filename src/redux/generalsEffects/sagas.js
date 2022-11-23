@@ -19,7 +19,8 @@ import {
     createUserSuccess,
     createUserError,
 } from './actions';
-// import {handlerAlertModal} from "../menusModals/actions";
+import {handlerAlertModal} from "../generalsEffects/actions";
+
 
 const reportsUrl = `${ROUTE_ENDPOINT}/reports`;
 const usersUrl = `${ROUTE_ENDPOINT}/users`;
@@ -108,6 +109,7 @@ function* userDeleteRequestingFlow(action) {
         const user_id = yield call(userDeleteRequestingApi, id, token);
         console.log(user_id)
         yield put(userDeleteSuccess(user_id.data));
+        yield put(handlerAlertModal("success", "=D Has eliminado a un usuario con éxito"));
         yield put(resetstate());
     } catch (error) {
         yield put(userDeleteError(error));
@@ -149,6 +151,7 @@ function* createUserRequestingFlow(action) {
         const {values, token} = action;
         const user = yield call(createUserRequestingApi, values, token);
         yield put(createUserSuccess(user.data));
+        yield put(handlerAlertModal("success", "=D Has agregado a un usuario a la lista con éxito"));
         yield put(resetstate());
     } catch (error) {
         yield put(createUserError(error));
