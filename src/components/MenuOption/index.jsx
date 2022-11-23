@@ -19,8 +19,8 @@ function MenuOption({ urlRoute, text, iconName}) {
     return (
         <Link href={urlRoute}>
             <div className={menuSideOptionValue === urlRoute ? styles.MenuOption_active : styles.MenuOption} onClick={() => dispatch(menuSideOption(urlRoute))}>
-                <Icon name={iconName}/>
-                <p>{text}</p>
+                <Icon  name={iconName}/>
+                <p className={styles.option_name}>{text}</p>
             </div>
         </Link>
     );

@@ -40,6 +40,7 @@ function UsersTable(props) {
                 <p className={styles.alumno_p}>NOMBRE</p>
                 <p className={styles.alumno_p}>CORREO</p>
                 <p className={styles.alumno_p}>ROL</p>
+                <p className={styles.alumno_p}></p>
             </div>
             {users.length > 0 &&
                 filterArrayUsers?.map((user, index) => (

@@ -9,7 +9,7 @@ import {LOGIN_REQUESTING} from "./constants";
 import {clientSet} from "../../client/actions";
 import {userGetSuccess} from "../user/actions";
 
-// import {handlerAlertModal} from "../../menusModals/actions";
+import {handlerAlertModal} from "../../generalsEffects/actions";
 
 const loginUrl = `${ROUTE_ENDPOINT}/login`;
 
@@ -59,6 +59,7 @@ function* loginFlow(action) {
             yield put(loginResetStates());
         
     } catch (error) {
+        yield put(handlerAlertModal("error", "Ups!!. Algo salió mal, vuélvelo a intentar más tarde"));
         yield put(loginError(error));
     }
 }

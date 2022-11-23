@@ -3,7 +3,9 @@
     display:flex;
     justify-content: flex-start;
     padding: 0px 50px;
+    min-width: 600px;
 }
+
 
 .programa_table_title_p{
     font-size: 1.3em;
@@ -14,4 +16,26 @@
 .alumno_p{
     width: 100%;
     color:gray;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 765px){
+    
+    
+    .programa_table_alumno_p_container{
+        padding: 0px 0px;
+    }
+
+    
+
+    .alumno_p{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 602px){
+    
+    .table_container{
+        overflow: auto;
+    }
 }

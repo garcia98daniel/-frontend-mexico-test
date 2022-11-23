@@ -69,3 +69,19 @@
 	margin-top: 100px;
 }
 
+@media screen and (max-width: 1024px) {
+
+	.left_login{
+		width: 100%;
+	}
+
+	.right_login{
+		display:none;
+	}
+	
+}
+@media screen and (max-width: 627px) {
+
+	
+	
+}

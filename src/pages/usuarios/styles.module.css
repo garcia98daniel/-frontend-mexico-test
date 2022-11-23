@@ -9,7 +9,8 @@
     flex-direction: column;
     padding: 10px 50px;
     background: #F9FEFF;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .page_title{
@@ -47,4 +48,31 @@
     margin: 0 30px;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media screen and (max-width: 965px) {
+
+    .table_title{
+     flex-direction: column;
+     padding: 0;
+    }
+    
+    .table_title_p{
+        width: 100%;
+    }
+
+    .table_title_p button{
+        margin-top: 15px !important;
+       }
+       
+}
+
+@media screen and (max-width: 765px) {
+
+    .page_container{
+        padding: 10px 20px;
+    }
+
+   
+  
 }

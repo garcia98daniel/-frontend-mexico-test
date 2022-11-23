@@ -18,10 +18,17 @@ function SideMenu(props) {
     <div className={styles.sideMenu}>
       <div className={styles.form_login_img}>
         <Image
-          className={styles.form_login_img}
           src="/images/logo2.png"
           height={"57"}
           width={"224"}
+          object-fit={"contain"}
+        />
+      </div>
+      <div className={styles.short_brand_icon}>
+        <Image
+          src="/images/short_brand.png"
+          height={"45"}
+          width={"45"}
           object-fit={"contain"}
         />
       </div>

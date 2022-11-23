@@ -17,6 +17,7 @@
 .programa_table_alumno_p_container{
     display:flex;
     justify-content: space-between;
+
 }
 
 .programa_table_title_p{
@@ -38,3 +39,24 @@
     color:gray;
 }
 
+
+@media screen and (max-width: 630px) {
+
+    .programa_table_title_first_container{
+        min-width: 66%;
+    }
+   
+    .programa_table_title_p{
+        margin:0;
+        min-width: 50%;
+        text-align: center;
+    }
+
+    .programa_table_title_p_row{
+        margin:0;
+        min-width: 33%;
+        text-align: center;
+    }
+
+    
+}

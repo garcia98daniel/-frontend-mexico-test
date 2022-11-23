@@ -1,5 +1,5 @@
 .sideMenu{
-    min-width: 354px;
+    min-width: 295px;
     height: 100vh;
     display:flex;
     /* justify-content: center; */
@@ -7,6 +7,11 @@
     flex-direction: column;
     background-color: #263238;
     padding-top: 40px;
+}
+
+
+.short_brand_icon{
+    display: none;
 }
 
 .hello_text{
@@ -28,4 +33,27 @@
     color:white;
     margin: 0;
     padding: 0;
+}
+
+
+@media screen and (max-width: 840px) {
+    .sideMenu{
+        min-width: 50px;
+    }
+    
+    .form_login_img{
+        display:none;
+    }
+
+    
+    .short_brand_icon{
+        display: block;
+        padding:10px;
+    }
+
+	
+    .hello_text{
+        display: none;
+    }
+
 }

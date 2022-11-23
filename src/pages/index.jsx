@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useRouter } from 'next/router';
 
 //components
+import ModalAlert from "../components/ModalAlert/index";
+import Alerts from "../components/Alerts/index";
 import { Button } from 'semantic-ui-react';
 import { 
   Input, 
@@ -36,6 +38,7 @@ function Home() {
   const {
     logged,
   } = useSelector((state) => state.clientReducer);
+  const { alertModal } = useSelector((state) => state.generalsEffectsReducer);
 
   //------------------- this handle the inputs values--------------------//
   const handleChangeForm = (key, value) => {
@@ -134,6 +137,11 @@ function Home() {
               object-fit= {"contain"}
               />
       </div>
+      <ModalAlert
+        show={alertModal.isOpen}
+      >
+        <Alerts/>
+      </ModalAlert>
     </div>
   );
 }

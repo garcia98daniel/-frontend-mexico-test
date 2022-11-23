@@ -7,12 +7,15 @@
     margin: 5px;
     border-radius: 10px;
     font-weight: 600;
+    min-width: 600px;
 }
 
 .UserItem p{
     width: 100%;
     margin: 0;
     padding: 0;
+    text-align: center;
+
 }
 
 .UserItem i{
@@ -21,4 +24,18 @@
 }
 .UserItem i:hover{
     transform: scale(1.2);
+}
+
+@media screen and (max-width: 765px){
+    
+   .UserItem{
+    padding: 15px 10px;
+   }
+
+   .UserItem p{
+        text-align: center;
+        width: 33%;
+        display: flex;
+        justify-content: center;
+    }
 }

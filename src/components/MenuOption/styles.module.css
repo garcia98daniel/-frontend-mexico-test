@@ -12,6 +12,8 @@
     border-radius: 8px;
 }
 
+
+
 .MenuOption p{
     margin-left: 20px;
 }
@@ -38,4 +40,23 @@
 
 .MenuOption:hover{
     color: rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 840px) {
+	.option_name{
+        display: none;
+    }
+
+
+    .MenuOption{
+        padding: 10px;
+        justify-content: center;
+
+    }
+    
+    .MenuOption_active{
+        padding: 10px;
+        justify-content: center;
+
+    }
 }
