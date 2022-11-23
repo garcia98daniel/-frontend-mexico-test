@@ -3,19 +3,23 @@ import Image from "next/image";
 
 //components
 import MenuOption from "../MenuOption/index";
+import SideMenuHover from "../SideMenuHover/index";
 
 //styles
 import styles from "./styles.module.css";
 import { useSelector } from "react-redux";
 
-import {useVerifyUserRole} from "../../hooks/useVerifyUserRole";
+import { useVerifyUserRole } from "../../hooks/useVerifyUserRole";
 
-function SideMenu(props) {
-
+function SideMenu() {
+  const [menuIsHover, setMenuIsHover] = useState(false);
   const { user } = useSelector((state) => state.userReducer);
 
   return (
-    <div className={styles.sideMenu}>
+    <div className={styles.sideMenu} onMouseOver={() => setMenuIsHover(true)}>
+      {menuIsHover && (
+        <SideMenuHover setMenuIsHover={setMenuIsHover}/>
+      )}
       <div className={styles.form_login_img}>
         <Image
           src="/images/logo2.png"
@@ -41,13 +45,9 @@ function SideMenu(props) {
         text={"Reportes"}
         urlRoute="/reportes"
       />
-      {useVerifyUserRole(user,"admin") &&
-      <MenuOption
-      iconName="users"
-      text={"Usuarios"}
-      urlRoute="/usuarios"
-      />
-      }
+      {useVerifyUserRole(user, "admin") && (
+        <MenuOption iconName="users" text={"Usuarios"} urlRoute="/usuarios" />
+      )}
       <MenuOption
         iconName="cog"
         text={"Configuracion"}
